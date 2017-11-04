@@ -34,9 +34,11 @@ def print_tepra(msg)
   spc10_path = "c:/Program Files/KING JIM/TEPRA SPC10/SPC10.exe"
 
   # choice tpe file
-  tpe_path   = $current_dir + "/template-9mm-8.tpe"
+  tpe_path   = $current_dir + "/template-9mm-12.tpe"
   if msg.size <= 4
     tpe_path   = $current_dir + "/template-9mm-4.tpe"
+  elsif msg.size <= 8
+    tpe_path   = $current_dir + "/template-9mm-8.tpe"
   end
 
   # create csv file
@@ -50,6 +52,7 @@ def print_tepra(msg)
   $log.info "exec cmd=" + cmd
 
   spawn(cmd)
+
 
 end
 
